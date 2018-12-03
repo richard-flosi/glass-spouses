@@ -17,6 +17,10 @@
         align-items: center;
         justify-content: center;
       }
+      header a {
+        display: flex;
+        flex-direction: column;
+      }
       nav {
         padding: 20px;
         background-color: green;
@@ -57,6 +61,7 @@
   </head>
   <body style="background-color:black;margin:0;padding:0;">
     <header>
+      <a href="#nav">
         <svg viewBox="0 0 100 50" width="100vw" xmlns="http://www.w3.org/2000/svg">
           <g id="stars">
             <circle cx="-101%" cy="5%" r="0.2" />
@@ -346,6 +351,11 @@
             <text x="60" y="17">Richard</text>
             <text x="62" y="22">Flosi</text>
           </g>
+          <g id="listen-now">
+            <text fill="green" x="45" y="10">Listen</text>
+            <text fill="green" x="46" y="15">Now</text>
+            <path fill="green" d="M 45,18 L 50,22 L 55,18" />
+          </g>
           <style>
             :root {
               --animation-duration: 36s;
@@ -534,10 +544,28 @@
               80% { display: block; opacity: 0; }
               100% { display: none; opacity: 0; }
             }
+            #listen-now {
+              font-size: 25%;
+              font-family: 'Text Me One', sans-serif;
+              font-weight: bold;
+              transition: var(--transition);
+              animation-name: listen-now;
+              animation-duration: var(--animation-duration);
+              animation-iteration-count: infinite;
+              animation-play-state: running;
+            }
+            @keyframes listen-now {
+              0% { display: none; opacity: 0; }
+              90% { display: block; opacity: 0; }
+              95% { display: block; opacity: 1; }
+              99% { display: block; opacity: 0; }
+              100% { display: none; opacity: 0; }
+            }
           </style>
         </svg>
+      </a>
     </header>
-    <nav>
+    <nav id="nav">
       <h2>Find Glass Spouses on...</h2>
       <ul>
         <li><a href="https://store.cdbaby.com/artist/GlassSpouses">cdbaby</a></li>
