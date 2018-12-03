@@ -330,6 +330,22 @@
           <g id="boat">
             <polygon points="40,40 43,45 57,45 60,40" />
           </g>
+          <g id="glass-spouses">
+            <text x="18%" y="52%">glass</text>
+            <text x="65%" y="53%">spouses</text>
+          </g>
+          <g id="featuring">
+            <text x="15%" y="53%">featuring</text>
+          </g>
+          <g id="laura-cooper">
+            <text x="43%" y="25%">Laura</text>
+            <text x="43%" y="35%">Cooper</text>
+          </g>
+          <g id="richard-flosi">
+            <text x="30%" y="40%">and</text>
+            <text x="61%" y="34%">Richard</text>
+            <text x="62%" y="44%">Flosi</text>
+          </g>
           <style>
             :root {
               --animation-duration: 36s;
@@ -445,6 +461,78 @@
               98% { transform: translateX(100%); display: block; opacity: 1; }
               99% { transform: translateX(100%); display: none; opacity: 0; }
               100% { transform: translateX(-100%); display: none; opacity: 0; }
+            }
+            #glass-spouses {
+              font-size: 40%;
+              font-family: 'Text Me One', sans-serif;
+              font-weight: bold;
+              fill: skyblue;
+              transition: var(--transition);
+              animation-name: glass-spouses;
+              animation-duration: var(--animation-duration);
+              animation-iteration-count: infinite;
+              animation-play-state: running;
+            }
+            @keyframes glass-spouses {
+              0% { display: none; opacity: 0; }
+              20% { display: block; opacity: 0; }
+              25% { display: block; opacity: 1; }
+              30% { display: block; opacity: 0; }
+              100% { display: none; opacity: 0; }
+            }
+            #featuring {
+              font-size: 35%;
+              font-family: 'Text Me One', sans-serif;
+              font-weight: bold;
+              fill:gold;
+              transition: var(--transition);
+              animation-name: featuring;
+              animation-duration: var(--animation-duration);
+              animation-iteration-count: infinite;
+              animation-play-state: running;
+            }
+            @keyframes featuring {
+              0% { display: none; opacity: 0; }
+              45% { display: block; opacity: 0; }
+              50% { display: block; opacity: 1; }
+              55% { display: block; opacity: 0; }
+              100% { display: none; opacity: 0; }
+            }
+            #laura-cooper {
+              font-size: 35%;
+              font-family: 'Text Me One', sans-serif;
+              font-weight: bold;
+              fill:black;
+              transition: var(--transition);
+              animation-name: laura-cooper;
+              animation-duration: var(--animation-duration);
+              animation-iteration-count: infinite;
+              animation-play-state: running;
+            }
+            @keyframes laura-cooper {
+              0% { display: none; opacity: 0; }
+              45% { display: block; opacity: 0; }
+              50% { display: block; opacity: 1; }
+              55% { display: block; opacity: 0; }
+              100% { display: none; opacity: 0; }
+            }
+            #richard-flosi {
+              font-size: 25%;
+              font-family: 'Text Me One', sans-serif;
+              font-weight: bold;
+              fill:black;
+              transition: var(--transition);
+              animation-name: richard-flosi;
+              animation-duration: var(--animation-duration);
+              animation-iteration-count: infinite;
+              animation-play-state: running;
+            }
+            @keyframes richard-flosi {
+              0% { display: none; opacity: 0; }
+              70% { display: block; opacity: 0; }
+              75% { display: block; opacity: 1; }
+              80% { display: block; opacity: 0; }
+              100% { display: none; opacity: 0; }
             }
           </style>
         </svg>
