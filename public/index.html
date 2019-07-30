@@ -43,6 +43,16 @@
         background-color: gold;
         padding: 50px 0;
       }
+      @media (min-width: 675px) {
+        main.mobile {
+          display: none;
+        }
+      }
+      @media (max-width: 675px) {
+        main.desktop {
+          display: none;
+        }
+      }
       footer {
         background-color: black;
         font-family: 'Text Me One', Helvetica, Arial, sans-serif;
@@ -556,8 +566,11 @@
         </style>
       </svg>
     </header>
-    <main>
+    <main class="desktop">
       <iframe name="full" style="display:block;min-width:675px;max-width:1000px;height:520px;border:0px;margin:0 auto;" src="//widget.cdbaby.com/a0f7a17b-e17e-47cc-b749-116e9fc7ec97/full/dark/opaque"></iframe>
+    </main>
+    <main class="mobile">
+      <div style="max-width:600px;max-height:645px;min-width:180px;"><div style="position: relative;height: 0;overflow: hidden;padding-bottom:100%;padding-top:30px;"><iframe name="square" style="position:absolute;top:0px;left:0px;width:100%;height:100%;border:0px;" src="//widget.cdbaby.com/a0f7a17b-e17e-47cc-b749-116e9fc7ec97/square/dark/opaque"></iframe></div></div>
     </main>
     <nav>
       <h2>Find Glass Spouses on...</h2>
