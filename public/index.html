@@ -18,39 +18,55 @@
         justify-content: center;
       }
       nav {
-        padding: 20px;
         background-color: green;
         color: white;
         font-family: 'Text Me One', Helvetica, Arial, sans-serif;
       }
+      nav h2 {
+        margin: 0;
+        padding: 20px 0;
+        text-align: center;
+      }
       nav ul {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        align-items: center;
+        justify-content: space-evenly;
         margin: 0;
         padding: 0;
+        background-color: black;
       }
       nav ul li {
         list-style-type: none;
         padding: 10px;
       }
       nav ul li a {
+        display: block;
+        margin-bottom: 5px;
         font-family: 'Text Me One', Helvetica, Arial, sans-serif;
         color: white;
         text-decoration: none;
+        text-align: center;
+      }
+      @media (min-width: 675px) {
+        main.mobile {
+          display: none;
+        }
+      }
+      @media (max-width: 674px) {
+        main.desktop {
+          display: none;
+        }
       }
       main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         background-color: gold;
         font-family: 'Text Me One', Helvetica, Arial, sans-serif;
         color: black;
         padding: 50px 0;
-      }
-      iframe {
-        display: block;
-        margin: 40px auto;
-      }
-      h1, h2 {
-        text-align: center;
       }
       footer {
         background-color: black;
@@ -352,11 +368,6 @@
           <text x="60" y="17">Richard</text>
           <text x="62" y="22">Flosi</text>
         </g>
-        <g id="listen-now">
-          <text fill="green" x="45" y="10">Listen</text>
-          <text fill="green" x="46" y="15">Now</text>
-          <path fill="green" d="M 45,18 L 50,22 L 55,18" />
-        </g>
         <style>
           :root {
             --animation-duration: 36s;
@@ -545,68 +556,194 @@
             80% { display: block; opacity: 0; }
             100% { display: none; opacity: 0; }
           }
-          #listen-now {
-            font-size: 25%;
-            font-family: 'Text Me One', Helvetica, Arial, sans-serif;
-            font-weight: bold;
-            transition: var(--transition);
-            animation-name: listen-now;
-            animation-duration: var(--animation-duration);
-            animation-iteration-count: infinite;
-            animation-play-state: running;
-          }
-          @keyframes listen-now {
-            0% { display: none; opacity: 0; }
-            90% { display: block; opacity: 0; }
-            95% { display: block; opacity: 1; }
-            99% { display: block; opacity: 0; }
-            100% { display: none; opacity: 0; }
-          }
         </style>
       </svg>
     </header>
     <nav>
-      <h2>Find Glass Spouses on...</h2>
+      <h2>Connect with Glass Spouses</h2>
       <ul>
-        <li><a target="_blank" href="https://store.cdbaby.com/artist/GlassSpouses">cdbaby</a></li>
-        <li><a target="_blank" href="https://www.youtube.com/channel/UCfXETswfimTSOnwlaLu_EAA">YouTube</a></li>
-        <li><a target="_blank" href="https://www.amazon.com/s/ref=ntt_srch_drd_B07G9RJPWJ?ie=UTF8&field-keywords=Glass%20Spouses&index=digital-music&search-type=ss">Amazon Music</a></li>
-        <li><a target="_blank" href="https://open.spotify.com/artist/56uC86XnwYTW7JFf6E18Qd">Spotify</a></li>
-        <li><a target="_blank" href="https://www.iheart.com/artist/glass-spouses-32441564/">iHeartRadio</a></li>
-        <li><a target="_blank" href="https://www.deezer.com/us/artist/49921282">Deezer</a></li>
-        <li><a target="_blank" href="https://itunes.apple.com/us/artist/glass-spouses/1424470946">iTunes</a></li>
-        <li><a target="_blank" href="https://play.google.com/store/music/artist/Glass_Spouses?id=Aksrym3tcw2bqnrw5hiqsfjmxpa&hl=en">Google Play</a></li>
-        <li><a target="_blank" href="https://www.shazam.com/artist/205145759/glass-spouses">Shazam</a></li>
-        <li><a target="_blank" href="https://listen.tidal.com/artist/10200631">Tidal</a></li>
-        <li><a target="_blank" href="https://www.kkbox.com/sg/en/artist/TdQ4YDy2bWkkfd0F0jX.m08K-index-1.html">kkbox</a></li>
-        <li><a target="_blank" href="https://music.line.me/artist/mi000000000f5cacf4">Line Music</a></li>
-        <li><a target="_blank" href="https://us.napster.com/artist/glass-spouses">Napster</a></li>
+        <li>
+          <a target="_blank" href="https://www.youtube.com/channel/UCjFjyE4tWrdUrozXv5Jw5Tg">
+            <img
+              src="https://www.youtube.com/about/static/svgs/icons/brand-resources/YouTube-logo-full_color_dark.svg"
+              alt="YouTube"
+              height="30"
+            >
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://open.spotify.com/artist/56uC86XnwYTW7JFf6E18Qd">
+            <img
+              src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Green.png"
+              alt="Spotify"
+              height="50"
+            >
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://store.cdbaby.com/artist/GlassSpouses">
+            <img 
+              src="https://widget.cdbaby.com/img/logo-cdbaby.svg"
+              alt="CD Baby"
+              height="50"
+            >
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.amazon.com/s/ref=ntt_srch_drd_B07G9RJPWJ?ie=UTF8&field-keywords=Glass%20Spouses&index=digital-music&search-type=ss">
+              <img
+                src="https://www.pinclipart.com/picdir/big/88-887749_amazon-music-logo-png-clip-art-library-stock.png"
+                height="60"
+              >
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://geo.music.apple.com/us/artist/glass-spouses/1424470946?mt=1&app=music&ls=1" style="display:inline-block;overflow:hidden;background:url(https://tools.applemusic.com/en-us/lockup.svg?kind=artist&bubble=apple_music&style=standard-white) no-repeat;width:140px;height:30px;"></a>
+        </li>
+        <li>
+          <a target="_blank" href="https://play.google.com/store/music/artist/Glass_Spouses?id=Aksrym3tcw2bqnrw5hiqsfjmxpa&hl=en">
+            <img 
+              src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+              alt="Get it on Google Play" 
+              height="60"
+            >
+          </a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a target="_blank" href="https://www.iheart.com/artist/glass-spouses-32441564/">
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/54becebee4b05d09416fe7e4/1475718752902-07IJKM7AR78OOB1MYYA0/ke17ZwdGBToddI8pDm48kLAY3bI3DNDFOb_z1FWm71FZw-zPPgdn4jUwVcJE1ZvWEtT5uBSRWt4vQZAgTJucoTqqXjS3CfNDSuuf31e0tVFlIGUzWGNhGUlHNZ1xf4AzM1usLotRKlzNpiqXhT9ij6QvevUbj177dmcMs1F0H-0/iHR_secondary_Dark.jpg?format=1000w"
+              alt="iHeartRadio"
+              height="60"
+            >
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://us.napster.com/artist/glass-spouses">
+            <img
+              src="https://us.napster.com/assets/logos/logo-napster@3x-e69a845d9d2b8fdf1f89efbd444dd9ca295cfc295c51538fcdd6fa13e4deff11.png"
+              alt="Napster"
+              height="40"
+            >
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.deezer.com/us/artist/49921282">
+            <img
+              src="http://deezerbrand.com/api/attachment/download/YG-EEqjXFOZTMQESis0Lhs5IGq7MFdYmeioH_DVH170Ty36v15KtZSolWnHFL3yAmjDULPh2LA6corWPf_19ng"
+              alt="Deezer"
+              height="30"
+            >
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://listen.tidal.com/artist/10200631">
+            <img
+              src="https://www.logospng.com/images/55/about-tidal-55935.png"
+              alt="Tidal"
+              height="20"
+            >
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://www.kkbox.com/sg/en/artist/TdQ4YDy2bWkkfd0F0jX.m08K-index-1.html">
+            <img
+              src="https://a-www.kfs.io/assets/vendor/portal-menu/images/brand-logo.svg"
+              alt="kkbox"
+              height="50"
+            >
+          </a>
+        </li>
+        <li>
+          <a target="_blank" href="https://music.line.me/artist/mi000000000f5cacf4">
+            <img
+              src="https://scdn.line-apps.com/stf/linecorp/ja/pr/LINEMUSICJV.png"
+              alt="Line Music"
+              height="60"
+            >
+          </a></li>
       </ul>
     </nav>
-    <main>
-        <h1>Listen Now</h1>
-        <h2>Music Videos</h2>
-        <div class="music-videos">
-          <iframe 
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/videoseries?list=PL_EpEfhIoYie3BJrH8lkWjOj7o8NI2q3c"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+    <main class="desktop">
+        <h1>Watch</h1>
+        <a target="_blank" href="https://www.youtube.com/channel/UCjFjyE4tWrdUrozXv5Jw5Tg">
+          <img
+            src="https://www.youtube.com/about/static/svgs/icons/brand-resources/YouTube-logo-full_color_light.svg"
+            alt="YouTube"
+            height="30"
+          >
+        </a>
+        <br>
+        <div>
+          <script src="https://apis.google.com/js/platform.js"></script>
+          <div class="g-ytsubscribe" data-channelid="UCjFjyE4tWrdUrozXv5Jw5Tg" data-layout="default" data-count="hidden"></div>
         </div>
-        <h2>Music Player</h2>
-        <div class="music-player">
-          <iframe
-            width="560"
-            height="100"
-            src="//widget.cdbaby.com/a0f7a17b-e17e-47cc-b749-116e9fc7ec97/mini/light/transparent"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
+        <br>
+        <iframe 
+          src="https://www.youtube.com/embed/videoseries?list=PL_EpEfhIoYie3BJrH8lkWjOj7o8NI2q3c"
+          width="660"
+          height="371"
+          frameborder="0"
+          allowtransparency="true"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <br><br>
+        <h1>Listen</h1>
+        <a target="_blank" href="https://open.spotify.com/artist/56uC86XnwYTW7JFf6E18Qd">
+          <img
+            src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_Black.png"
+            alt="Spotify"
+            height="50"
+          >
+        </a>
+        <br>
+        <iframe
+          src="https://open.spotify.com/follow/1/?uri=spotify:artist:56uC86XnwYTW7JFf6E18Qd&size=basic&theme=dark&show-count=0"
+          width="92"
+          height="26"
+          scrolling="no"
+          frameborder="0"
+          allowtransparency="true"
+        ></iframe>
+        <br>
+        <iframe
+          src="https://open.spotify.com/embed/artist/56uC86XnwYTW7JFf6E18Qd"
+          width="660"
+          height="280"
+          frameborder="0"
+          allowtransparency="true"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <br><br>
+        <a target="_blank" href="https://store.cdbaby.com/artist/GlassSpouses">
+          <img 
+            src="https://cdbaby.com/images/branding_2019/CD_Baby_Logo_Black.png"
+            alt="CD Baby"
+            height="50"
+          >
+        </a>
+        <br>
+        <iframe 
+          src="https://widget.cdbaby.com/a0f7a17b-e17e-47cc-b749-116e9fc7ec97/full/light/transparent"
+          width="660"
+          height="520"
+          frameborder="0"
+          allowtransparency="true"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </main>
+      <main class="mobile">
+        <h1>Listen</h1>
+        <iframe 
+          name="mini"
+          style="border:0px;width:100%;height:100px;"
+          src="https://widget.cdbaby.com/a0f7a17b-e17e-47cc-b749-116e9fc7ec97/mini/light/transparent"
+        ></iframe>
       </main>
       <footer>
       <h1>Glass Spouses</h1>
