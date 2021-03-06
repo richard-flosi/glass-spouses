@@ -28,6 +28,10 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Text+Me+One" rel="stylesheet">
     <style>
+      h1,h2,h3,h4,h5,h6 {
+        margin: 0;
+        padding: 0;
+      }
       header {
         display: flex;
         flex-direction: column;
@@ -35,15 +39,159 @@
         align-items: center;
         justify-content: center;
       }
-      nav {
-        background-color: green;
-        color: white;
-        font-family: 'Text Me One', Helvetica, Arial, sans-serif;
-      }
-      nav h2 {
+      header h2 {
         margin: 0;
         padding: 40px 0;
         text-align: center;
+        color: white;
+        font-family: 'Text Me One', Helvetica, Arial, sans-serif;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Text Me One', Helvetica, Arial, sans-serif;
+      }
+      .watch {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: gold;
+        color: black;
+        padding: 20px 0;
+        width: 100%;
+      }
+      .listen {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        color: gold;
+        padding: 20px 0;
+        width: 100%;
+      }
+      .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: gold;
+        color: black;
+        width: 100%;
+        padding: 20px 0;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+      }
+      label {
+        width: 100%;
+        font-size: 14px;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+      }
+      textarea {
+        width: 100%;
+        height: 20vh;
+        padding: 10px;
+        font-size: 14px;
+      }
+      button {
+        background-color: black;
+        color: gold;
+        padding: 20px 40px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 8px;
+        outline: none;
+      }
+      .open-mic {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #404040;
+        color: white;
+        padding: 20px 0;
+      }
+      p {
+        padding: 20px;
+        margin: 0;
+      }
+      a {
+        color: white;
+        text-decoration: underline;
+      }
+      a:hover {
+        color: white;
+      }
+      a:visited {
+        color: white;
+      }
+      img {
+        width: 100%;
+        height: auto;
+      }
+      .live {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        color: white;
+        padding: 20px 0;
+      }
+      .events {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #404040;
+        color: gold;
+        padding: 20px 0;
+      }
+      .responsive-video {
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+      }
+      .responsive-video iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+      .responsive-square {
+        width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+      }
+      .responsive-square iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+      nav {
+        background-color: #303030;
+        padding: 40px 40px;
       }
       nav ul {
         display: flex;
@@ -52,46 +200,18 @@
         justify-content: space-evenly;
         margin: 0;
         padding: 0;
-        background-color: black;
       }
       nav ul li {
         list-style-type: none;
         padding: 10px;
-      }
-      nav ul li a {
-        display: block;
-        margin-bottom: 5px;
-        font-family: 'Text Me One', Helvetica, Arial, sans-serif;
-        color: white;
-        text-decoration: none;
-        text-align: center;
-      }
-      @media (min-width: 675px) {
-        main.mobile {
-          display: none;
-        }
-      }
-      @media (max-width: 674px) {
-        main.desktop {
-          display: none;
-        }
-      }
-      main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: gold;
-        font-family: 'Text Me One', Helvetica, Arial, sans-serif;
-        color: black;
-        padding: 50px 0;
+        width: 140px;
       }
       footer {
         background-color: black;
         font-family: 'Text Me One', Helvetica, Arial, sans-serif;
-        color: white;
+        color: gold;
         text-align: center;
-        padding: 20px 10px;
+        padding: 40px 10px;
       }
     </style>
     <script type="application/ld+json">
@@ -108,515 +228,149 @@
       }
     </script>
   </head>
-  <body style="background-color:black;margin:0;padding:0;">
+  <body style="background-color:black;margin:0;padding:0;max-width:960px;margin:0 auto;">
     <header>
-      <svg viewBox="0 0 100 50" width="calc(100vw - 15px)" xmlns="http://www.w3.org/2000/svg">
-        <g id="stars">
-          <circle cx="-101%" cy="5%" r="0.2" />
-          <circle cx="-100%" cy="10%" r="0.1" />
-          <circle cx="-101%" cy="20%" r="0.2" />
-          <circle cx="-103%" cy="30%" r="0.1" />
-          <circle cx="-102%" cy="40%" r="0.2" />
-          <circle cx="-105%" cy="50%" r="0.1" />
-          <circle cx="-108%" cy="60%" r="0.2" />
-          <circle cx="-104%" cy="70%" r="0.1" />
-          <circle cx="-92%" cy="6%" r="0.1" />
-          <circle cx="-90%" cy="11%" r="0.1" />
-          <circle cx="-91%" cy="21%" r="0.2" />
-          <circle cx="-93%" cy="31%" r="0.1" />
-          <circle cx="-96%" cy="41%" r="0.2" />
-          <circle cx="-92%" cy="51%" r="0.1" />
-          <circle cx="-97%" cy="61%" r="0.2" />
-          <circle cx="-94%" cy="71%" r="0.1" />
-          <circle cx="-98%" cy="81%" r="0.1" />
-          <circle cx="-82%" cy="9%" r="0.2" />
-          <circle cx="-80%" cy="19%" r="0.2" />
-          <circle cx="-82%" cy="29%" r="0.1" />
-          <circle cx="-84%" cy="39%" r="0.2" />
-          <circle cx="-89%" cy="49%" r="0.1" />
-          <circle cx="-86%" cy="59%" r="0.2" />
-          <circle cx="-83%" cy="69%" r="0.1" />
-          <circle cx="-87%" cy="79%" r="0.2" />
-          <circle cx="-71%" cy="2%" r="0.3" />
-          <circle cx="-70%" cy="12%" r="0.3" />
-          <circle cx="-73%" cy="22%" r="0.2" />
-          <circle cx="-77%" cy="32%" r="0.3" />
-          <circle cx="-72%" cy="42%" r="0.2" />
-          <circle cx="-74%" cy="52%" r="0.3" />
-          <circle cx="-79%" cy="62%" r="0.1" />
-          <circle cx="-75%" cy="72%" r="0.3" />
-          <circle cx="-61%" cy="8%" r="0.15" />
-          <circle cx="-60%" cy="18%" r="0.15" />
-          <circle cx="-65%" cy="28%" r="0.25" />
-          <circle cx="-62%" cy="38%" r="0.15" />
-          <circle cx="-68%" cy="48%" r="0.35" />
-          <circle cx="-61%" cy="58%" r="0.15" />
-          <circle cx="-67%" cy="68%" r="0.25" />
-          <circle cx="-69%" cy="78%" r="0.15" />
-          <circle cx="-51%" cy="3%" r="0.08" />
-          <circle cx="-50%" cy="13%" r="0.08" />
-          <circle cx="-58%" cy="23%" r="0.18" />
-          <circle cx="-52%" cy="33%" r="0.08" />
-          <circle cx="-57%" cy="43%" r="0.18" />
-          <circle cx="-51%" cy="53%" r="0.08" />
-          <circle cx="-56%" cy="63%" r="0.28" />
-          <circle cx="-55%" cy="73%" r="0.08" />
-          <circle cx="-42%" cy="7%" r="0.1" />
-          <circle cx="-40%" cy="17%" r="0.1" />
-          <circle cx="-41%" cy="27%" r="0.2" />
-          <circle cx="-47%" cy="37%" r="0.1" />
-          <circle cx="-42%" cy="47%" r="0.3" />
-          <circle cx="-49%" cy="57%" r="0.1" />
-          <circle cx="-43%" cy="67%" r="0.2" />
-          <circle cx="-48%" cy="77%" r="0.1" />
-          <circle cx="-33%" cy="4%" r="0.3" />
-          <circle cx="-30%" cy="14%" r="0.3" />
-          <circle cx="-31%" cy="24%" r="0.1" />
-          <circle cx="-39%" cy="34%" r="0.2" />
-          <circle cx="-32%" cy="44%" r="0.1" />
-          <circle cx="-33%" cy="54%" r="0.3" />
-          <circle cx="-37%" cy="64%" r="0.1" />
-          <circle cx="-34%" cy="74%" r="0.1" />
-          <circle cx="-24%" cy="6%" r="0.2" />
-          <circle cx="-20%" cy="16%" r="0.2" />
-          <circle cx="-22%" cy="26%" r="0.1" />
-          <circle cx="-25%" cy="36%" r="0.2" />
-          <circle cx="-29%" cy="46%" r="0.3" />
-          <circle cx="-23%" cy="56%" r="0.2" />
-          <circle cx="-26%" cy="66%" r="0.1" />
-          <circle cx="-21%" cy="76%" r="0.2" />
-          <circle cx="-11%" cy="5%" r="0.3" />
-          <circle cx="-10%" cy="15%" r="0.3" />
-          <circle cx="-13%" cy="25%" r="0.2" />
-          <circle cx="-18%" cy="35%" r="0.3" />
-          <circle cx="-15%" cy="45%" r="0.1" />
-          <circle cx="-19%" cy="55%" r="0.3" />
-          <circle cx="-11%" cy="65%" r="0.1" />
-          <circle cx="-17%" cy="75%" r="0.3" />
-          <circle cx="1%" cy="1%" r="0.15" />
-          <circle cx="0" cy="10%" r="0.15" />
-          <circle cx="5%" cy="20%" r="0.25" />
-          <circle cx="8%" cy="30%" r="0.15" />
-          <circle cx="1%" cy="40%" r="0.35" />
-          <circle cx="9%" cy="50%" r="0.15" />
-          <circle cx="4%" cy="60%" r="0.25" />
-          <circle cx="7%" cy="70%" r="0.15" />
-          <circle cx="11%" cy="1%" r="0.08" />
-          <circle cx="10%" cy="11%" r="0.08" />
-          <circle cx="18%" cy="21%" r="0.08" />
-          <circle cx="12%" cy="31%" r="0.18" />
-          <circle cx="17%" cy="41%" r="0.08" />
-          <circle cx="15%" cy="51%" r="0.28" />
-          <circle cx="19%" cy="61%" r="0.08" />
-          <circle cx="13%" cy="71%" r="0.38" />
-          <circle cx="24%" cy="9%" r="0.1" />
-          <circle cx="20%" cy="19%" r="0.1" />
-          <circle cx="21%" cy="29%" r="0.3" />
-          <circle cx="27%" cy="39%" r="0.1" />
-          <circle cx="23%" cy="49%" r="0.2" />
-          <circle cx="29%" cy="59%" r="0.1" />
-          <circle cx="22%" cy="69%" r="0.1" />
-          <circle cx="25%" cy="79%" r="0.3" />
-          <circle cx="34%" cy="2%" r="0.1" />
-          <circle cx="30%" cy="12%" r="0.1" />
-          <circle cx="31%" cy="22%" r="0.1" />
-          <circle cx="37%" cy="32%" r="0.2" />
-          <circle cx="32%" cy="42%" r="0.1" />
-          <circle cx="39%" cy="52%" r="0.1" />
-          <circle cx="35%" cy="62%" r="0.3" />
-          <circle cx="37%" cy="72%" r="0.1" />
-          <circle cx="44%" cy="8%" r="0.2" />
-          <circle cx="40%" cy="18%" r="0.2" />
-          <circle cx="42%" cy="28%" r="0.1" />
-          <circle cx="47%" cy="38%" r="0.2" />
-          <circle cx="43%" cy="48%" r="0.2" />
-          <circle cx="49%" cy="58%" r="0.1" />
-          <circle cx="45%" cy="68%" r="0.2" />
-          <circle cx="41%" cy="78%" r="0.2" />
-          <circle cx="55%" cy="3%" r="0.3" />
-          <circle cx="50%" cy="13%" r="0.3" />
-          <circle cx="53%" cy="23%" r="0.1" />
-          <circle cx="57%" cy="33%" r="0.3" />
-          <circle cx="55%" cy="43%" r="0.3" />
-          <circle cx="58%" cy="53%" r="0.1" />
-          <circle cx="52%" cy="63%" r="0.3" />
-          <circle cx="59%" cy="73%" r="0.3" />
-          <circle cx="64%" cy="7%" r="0.15" />
-          <circle cx="60%" cy="17%" r="0.15" />
-          <circle cx="65%" cy="27%" r="0.15" />
-          <circle cx="62%" cy="37%" r="0.25" />
-          <circle cx="68%" cy="47%" r="0.15" />
-          <circle cx="64%" cy="57%" r="0.15" />
-          <circle cx="69%" cy="67%" r="0.35" />
-          <circle cx="61%" cy="77%" r="0.15" />
-          <circle cx="73%" cy="4%" r="0.08" />
-          <circle cx="70%" cy="14%" r="0.08" />
-          <circle cx="78%" cy="24%" r="0.28" />
-          <circle cx="71%" cy="34%" r="0.08" />
-          <circle cx="79%" cy="44%" r="0.08" />
-          <circle cx="75%" cy="54%" r="0.18" />
-          <circle cx="77%" cy="64%" r="0.08" />
-          <circle cx="72%" cy="74%" r="0.18" />
-          <circle cx="84%" cy="6%" r="0.1" />
-          <circle cx="80%" cy="16%" r="0.1" />
-          <circle cx="81%" cy="26%" r="0.1" />
-          <circle cx="85%" cy="36%" r="0.1" />
-          <circle cx="87%" cy="46%" r="0.2" />
-          <circle cx="83%" cy="56%" r="0.1" />
-          <circle cx="89%" cy="66%" r="0.1" />
-          <circle cx="86%" cy="76%" r="0.3" />
-          <circle cx="94%" cy="5%" r="0.1" />
-          <circle cx="90%" cy="15%" r="0.1" />
-          <circle cx="91%" cy="25%" r="0.1" />
-          <circle cx="98%" cy="35%" r="0.2" />
-          <circle cx="95%" cy="45%" r="0.1" />
-          <circle cx="97%" cy="55%" r="0.1" />
-          <circle cx="92%" cy="65%" r="0.3" />
-          <circle cx="96%" cy="75%" r="0.1" />
-          <circle cx="101%" cy="1%" r="0.2" />
-          <circle cx="100%" cy="10%" r="0.2" />
-          <circle cx="102%" cy="20%" r="0.2" />
-          <circle cx="107%" cy="30%" r="0.1" />
-          <circle cx="103%" cy="40%" r="0.2" />
-          <circle cx="105%" cy="50%" r="0.2" />
-          <circle cx="101%" cy="60%" r="0.3" />
-          <circle cx="108%" cy="70%" r="0.2" />
-          <circle cx="112%" cy="1%" r="0.3" />
-          <circle cx="110%" cy="11%" r="0.3" />
-          <circle cx="113%" cy="21%" r="0.1" />
-          <circle cx="111%" cy="31%" r="0.3" />
-          <circle cx="119%" cy="41%" r="0.3" />
-          <circle cx="117%" cy="51%" r="0.1" />
-          <circle cx="115%" cy="61%" r="0.3" />
-          <circle cx="112%" cy="71%" r="0.3" />
-          <circle cx="122%" cy="9%" r="0.15" />
-          <circle cx="120%" cy="19%" r="0.15" />
-          <circle cx="125%" cy="29%" r="0.15" />
-          <circle cx="129%" cy="39%" r="0.25" />
-          <circle cx="122%" cy="49%" r="0.15" />
-          <circle cx="127%" cy="59%" r="0.15" />
-          <circle cx="123%" cy="69%" r="0.35" />
-          <circle cx="128%" cy="79%" r="0.15" />
-          <circle cx="132%" cy="2%" r="0.08" />
-          <circle cx="130%" cy="12%" r="0.08" />
-          <circle cx="138%" cy="22%" r="0.08" />
-          <circle cx="133%" cy="32%" r="0.18" />
-          <circle cx="135%" cy="42%" r="0.08" />
-          <circle cx="139%" cy="52%" r="0.08" />
-          <circle cx="132%" cy="62%" r="0.38" />
-          <circle cx="131%" cy="72%" r="0.08" />
-          <circle cx="142%" cy="8%" r="0.1" />
-          <circle cx="140%" cy="18%" r="0.1" />
-          <circle cx="141%" cy="28%" r="0.2" />
-          <circle cx="148%" cy="38%" r="0.1" />
-          <circle cx="145%" cy="48%" r="0.1" />
-          <circle cx="147%" cy="58%" r="0.1" />
-          <circle cx="142%" cy="68%" r="0.3" />
-          <circle cx="149%" cy="78%" r="0.1" />
-          <circle cx="154%" cy="3%" r="0.1" />
-          <circle cx="150%" cy="13%" r="0.1" />
-          <circle cx="151%" cy="23%" r="0.2" />
-          <circle cx="157%" cy="33%" r="0.1" />
-          <circle cx="152%" cy="43%" r="0.1" />
-          <circle cx="155%" cy="53%" r="0.3" />
-          <circle cx="153%" cy="63%" r="0.1" />
-          <circle cx="156%" cy="73%" r="0.1" />
-          <circle cx="164%" cy="7%" r="0.2" />
-          <circle cx="160%" cy="17%" r="0.2" />
-          <circle cx="162%" cy="27%" r="0.1" />
-          <circle cx="166%" cy="37%" r="0.2" />
-          <circle cx="163%" cy="47%" r="0.2" />
-          <circle cx="168%" cy="57%" r="0.2" />
-          <circle cx="161%" cy="67%" r="0.1" />
-          <circle cx="169%" cy="77%" r="0.2" />
-          <circle cx="172%" cy="4%" r="0.3" />
-          <circle cx="170%" cy="14%" r="0.3" />
-          <circle cx="173%" cy="24%" r="0.2" />
-          <circle cx="178%" cy="34%" r="0.3" />
-          <circle cx="175%" cy="44%" r="0.3" />
-          <circle cx="172%" cy="54%" r="0.2" />
-          <circle cx="179%" cy="64%" r="0.3" />
-          <circle cx="171%" cy="74%" r="0.1" />
-          <circle cx="183%" cy="6%" r="0.15" />
-          <circle cx="180%" cy="16%" r="0.15" />
-          <circle cx="185%" cy="26%" r="0.15" />
-          <circle cx="182%" cy="36%" r="0.25" />
-          <circle cx="187%" cy="46%" r="0.15" />
-          <circle cx="184%" cy="56%" r="0.15" />
-          <circle cx="188%" cy="66%" r="0.35" />
-          <circle cx="181%" cy="76%" r="0.15" />
-          <circle cx="194%" cy="5%" r="0.08" />
-          <circle cx="190%" cy="15%" r="0.08" />
-          <circle cx="198%" cy="25%" r="0.18" />
-          <circle cx="193%" cy="35%" r="0.08" />
-          <circle cx="199%" cy="45%" r="0.08" />
-          <circle cx="194%" cy="55%" r="0.28" />
-          <circle cx="197%" cy="65%" r="0.08" />
-          <circle cx="191%" cy="75%" r="0.08" />
-          <circle cx="202%" cy="1%" r="0.1" />
-          <circle cx="200%" cy="10%" r="0.1" />
-          <circle cx="201%" cy="20%" r="0.2" />
-          <circle cx="203%" cy="30%" r="0.1" />
-          <circle cx="208%" cy="40%" r="0.1" />
-          <circle cx="205%" cy="50%" r="0.3" />
-          <circle cx="209%" cy="60%" r="0.1" />
-          <circle cx="204%" cy="70%" r="0.1" />
-        </g>
-        <rect id="sky" x="0" y="0" />
-        <circle id="sun" />
-        <circle id="moon" />
-        <g id="clouds">
-          <g>
-            <circle cx="25%" cy="43%" r="6" />
-            <ellipse cx="25%" cy="50%" rx="15" ry="5" />
-            <circle cx="15%" cy="48%" r="6" />
-            <circle cx="35%" cy="48%" r="5.8" />
-          </g>
-          <g>
-            <circle cx="75%" cy="45%" r="5.8" />
-            <ellipse cx="75%" cy="52%" rx="14" ry="4" />
-            <circle cx="65%" cy="50%" r="5.6" />
-            <circle cx="85%" cy="50%" r="5.5" />
-          </g>
-        </g>
-        <rect id="ocean" x="0" y="75%" />
-        <g id="boat">
-          <polygon points="40,40 43,45 57,45 60,40" />
-        </g>
-        <g id="glass-spouses">
-          <text x="18" y="26">glass</text>
-          <text x="65" y="26.5">spouses</text>
-        </g>
-        <g id="featuring">
-          <text x="15" y="27">featuring</text>
-        </g>
-        <g id="laura-cooper">
-          <text x="43" y="12">Laura</text>
-          <text x="43" y="18">Cooper</text>
-        </g>
-        <g id="richard-flosi">
-          <text x="30" y="20">and</text>
-          <text x="60" y="17">Richard</text>
-          <text x="62" y="22">Flosi</text>
-        </g>
-        <style>
-          :root {
-            --animation-duration: 36s;
-            --transition: all 3s linear;
-          }
-          #stars {
-            overflow: hidden;
-            fill: white;
-            transition: var(--transition);
-            animation-name: stars;
-            animation-duration: var(--animation-duration);
-            animation-iteration-count: infinite;
-            animation-play-state: running;
-          }
-          @keyframes stars {
-            0% { transform: translateX(-10%); opacity: 1; }
-            25% { transform: translateX(25%); opacity: 0.1; }
-            33% { transform: translateX(33%); opacity: 0; }
-            50% { transform: translateX(50%); opacity: 0; }
-            66% { transform: translateX(-100%); opacity: 0; }
-            75% { transform: translateX(-25%); opacity: 0.1; }
-            100% { transform: translateX(-10%); opacity: 1; }
-          }
-          #sky {
-            width: 100%;
-            height: 75%;
-            transition: var(--transition);
-            animation-name: sky;
-            animation-duration: var(--animation-duration);
-            animation-iteration-count: infinite;
-            animation-play-state: running;
-          }
-          @keyframes sky {
-            0% { fill: transparent; opacity: 0; }
-            14% { fill: midnightblue; opacity: 0.3; }
-            28% { fill: gold; opacity: 0.6; }
-            35% { fill: skyblue; opacity: 0.7; }
-            42% { fill: skyblue; opacity: 0.9; }
-            49% { fill: skyblue; opacity: 1; }
-            56% { fill: skyblue; opacity: 0.7; }
-            70% { fill: darkorange; opacity: 0.6; }
-            84% { fill: midnightblue; opacity: 0.3; }
-            100% { fill: transparent; opacity: 0; }
-          }
-          #sun {
-            transition: var(--transition);
-            animation-name: sun;
-            animation-duration: var(--animation-duration);
-            animation-iteration-count: infinite;
-            animation-play-state: running;
-          }
-          @keyframes sun {
-            0% { cx: -20%; cy: 49%; r: 7%; fill: orange; }
-            25% { cx: 33%; cy: 36%; r: 12%; fill: gold; }
-            50% { cx: 50%; cy: 26%; r: 15%; fill: lightyellow; }
-            75% { cx: 66%; cy: 36%; r: 12%; fill: orangered; }
-            100% { cx: 120%; cy: 49%; r: 7%; fill: red; }
-          }
-          #moon {
-            fill: lightyellow;
-            opacity: 0.9;
-            transition: var(--transition);
-            animation-name: moon;
-            animation-duration: var(--animation-duration);
-            animation-delay: calc(var(--animation-duration) / 2);
-            animation-iteration-count: infinite;
-            animation-play-state: running;
-          }
-          @keyframes moon {
-            0% { cx: -20%; cy: 49%; r: 7%; }
-            25% { cx: 33%; cy: 36%; r: 12%; }
-            50% { cx: 50%; cy: 26%; r: 15%; }
-            75% { cx: 66%; cy: 36%; r: 12%; }
-            100% { cx: 120%; cy: 49%; r: 7%; }
-          }
-          #clouds {
-            fill: white;
-            transition: var(--transition);
-            animation-name: clouds;
-            animation-duration: var(--animation-duration);
-            animation-iteration-count: infinite;
-            animation-play-state: running;
-          }
-          @keyframes clouds {
-            0% { transform: translateX(100%); display: block; opacity: 0.97; }
-            25% { transform: translateX(0%); display: block; opacity: 0.97; }
-            50% { transform: translateX(-50%); display: block; opacity: 0.97; }
-            75% { transform: translateX(-75%); display: block; opacity: 0.97; }
-            98% { transform: translateX(-200%); display: block; opacity: 0.97; }
-            99% { transform: translateX(-200%); display: none; opacity: 0; }
-            100% { transform: translateX(100%); display: none; opacity: 0; }
-          }
-          #ocean {
-            fill: blue;
-            width: 100%;
-            height: 25%;
-          }
-          #boat {
-            opacity: 0;
-            fill: brown;
-            transition: var(--transition);
-            animation-name: boat;
-            animation-duration: var(--animation-duration);
-            animation-delay: calc(var(--animation-duration) / 4);
-            animation-iteration-count: infinite;
-            animation-play-state: running;
-          }
-          @keyframes boat {
-            0% { transform: translateX(-100%); display: block; opacity: 1; }
-            25% { transform: translateX(-25%); display: block; opacity: 1; }
-            50% { transform: translateX(0%); display: block; opacity: 1; }
-            75% { transform: translateX(25%); display: block; opacity: 1; }
-            98% { transform: translateX(100%); display: block; opacity: 1; }
-            99% { transform: translateX(100%); display: none; opacity: 0; }
-            100% { transform: translateX(-100%); display: none; opacity: 0; }
-          }
-          #glass-spouses {
-            font-size: 40%;
-            font-family: 'Text Me One', Helvetica, Arial, sans-serif;
-            font-weight: bold;
-            fill: skyblue;
-            transition: var(--transition);
-            animation-name: glass-spouses;
-            animation-duration: var(--animation-duration);
-            animation-iteration-count: infinite;
-            animation-play-state: running;
-          }
-          @keyframes glass-spouses {
-            0% { display: none; opacity: 0; }
-            20% { display: block; opacity: 0; }
-            25% { display: block; opacity: 1; }
-            30% { display: block; opacity: 0; }
-            100% { display: none; opacity: 0; }
-          }
-          #featuring {
-            font-size: 35%;
-            font-family: 'Text Me One', Helvetica, Arial, sans-serif;
-            font-weight: bold;
-            fill:gold;
-            transition: var(--transition);
-            animation-name: featuring;
-            animation-duration: var(--animation-duration);
-            animation-iteration-count: infinite;
-            animation-play-state: running;
-          }
-          @keyframes featuring {
-            0% { display: none; opacity: 0; }
-            45% { display: block; opacity: 0; }
-            50% { display: block; opacity: 1; }
-            55% { display: block; opacity: 0; }
-            100% { display: none; opacity: 0; }
-          }
-          #laura-cooper {
-            font-size: 35%;
-            font-family: 'Text Me One', Helvetica, Arial, sans-serif;
-            font-weight: bold;
-            fill:black;
-            transition: var(--transition);
-            animation-name: laura-cooper;
-            animation-duration: var(--animation-duration);
-            animation-iteration-count: infinite;
-            animation-play-state: running;
-          }
-          @keyframes laura-cooper {
-            0% { display: none; opacity: 0; }
-            45% { display: block; opacity: 0; }
-            50% { display: block; opacity: 1; }
-            55% { display: block; opacity: 0; }
-            100% { display: none; opacity: 0; }
-          }
-          #richard-flosi {
-            font-size: 25%;
-            font-family: 'Text Me One', Helvetica, Arial, sans-serif;
-            font-weight: bold;
-            fill:black;
-            transition: var(--transition);
-            animation-name: richard-flosi;
-            animation-duration: var(--animation-duration);
-            animation-iteration-count: infinite;
-            animation-play-state: running;
-          }
-          @keyframes richard-flosi {
-            0% { display: none; opacity: 0; }
-            70% { display: block; opacity: 0; }
-            75% { display: block; opacity: 1; }
-            80% { display: block; opacity: 0; }
-            100% { display: none; opacity: 0; }
-          }
-        </style>
-      </svg>
+      <h2>Glass Spouses</h2>
     </header>
+    <main>
+      <div class="watch">
+        <h1>Watch</h1>
+        <div style="height:20px;"></div>
+        <div class="responsive-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/YMkv0xqOaQg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div style="height:20px;"></div>
+        <div>
+          <script src="https://apis.google.com/js/platform.js"></script>
+          <div class="g-ytsubscribe" data-channelid="UCjFjyE4tWrdUrozXv5Jw5Tg" data-layout="default" data-count="hidden"></div>
+        </div>
+      </div>
+      <div class="listen">
+        <h1>Listen</h1>
+        <div style="height:20px;"></div>
+        <div class="responsive-square">
+          <iframe
+            src="https://open.spotify.com/embed/artist/56uC86XnwYTW7JFf6E18Qd"
+            width="660"
+            height="280"
+            frameborder="0"
+            allowtransparency="true"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div style="height:20px;"></div>
+        <div>
+          <iframe
+            src="https://open.spotify.com/follow/1/?uri=spotify:artist:56uC86XnwYTW7JFf6E18Qd&size=basic&theme=dark&show-count=0"
+            width="92"
+            height="26"
+            scrolling="no"
+            frameborder="0"
+            allowtransparency="true"
+          ></iframe>
+        </div>
+      </div>
+      <div class="open-mic">
+        <h1>Open Mic</h1>
+        <div style="height:20px;"></div>
+        <img src="open-mic-queen.jpg" alt="Open Mic Queen" />
+        <div style="height:20px;"></div>
+        <div style="display:flex; flex-direction:column; align-items: center; text-align: center;">
+          <h2><a href="https://www.facebook.com/events/414825879794835/">Open Mic of Horrors!</a></h2>
+          <div style="height:10px;"></div>
+          <strong>Every Thursday</strong>
+          <div style="height:10px;"></div>
+          <strong>7PM EST - 10PM EST</strong>
+        </div>
+        <div style="height:20px;"></div>
+        <img src="open-mic-laura.jpg" alt="Open Mic Laura" />
+        <p>
+          Catch Laura live every Thursday as she hosts the spookiest open mic around.
+          Join Laura at Jonesy's Cafe by Coffee Shop of Horrors in Tavares.
+        </p>
+        <img src="open-mic-stage.jpg" alt="Open Mic Stage" />
+        <p style="text-align: center;">
+          <a href="https://www.coffeeshopofhorrors.com/cafe-locations-coffee-shop-of-horrors">Jonesy's Cafe</a>
+          <div style="height: 5px;"></div>
+          <a href="https://www.google.com/maps?ll=28.798289,-81.739486&z=15&t=m&hl=en&gl=US&mapclient=embed&q=508+S+Duncan+Dr+Tavares,+FL+32778">508 S. Duncan Dr.<br />Tavares, FL 32778</a>
+        </p>
+        <img src="open-mic-richard.jpg" alt="Open Mic Richard" />
+        <div style="height:20px;"></div>
+      </div>
+      <div class="live">
+        <h1>Live</h1>
+        <p>
+          Laura and Richard of Glass Spouses can frequently be found at some of their favorite open mics.
+        </p>
+        <img src="open-mic-celery-city-laura.jpg" alt="Open Mic Celery City Laura" />
+        <div style="height:20px;"></div>
+        <h2>Wednesdays</h2>
+        <p>
+          <a href="https://www.facebook.com/events/1344634479206319/">
+            Open Mic
+            hosted by Rhenn
+            at Celery City Craft
+            5:30PM - 9PM EST
+          </a>
+        </p>
+        <p>
+          <a href="https://www.facebook.com/events/1087927668340008">
+            Jam Night
+            hosted by Bruce Coale
+            at The Alley
+            7PM - 11PM EST
+          </a>
+        </p>
+        <h2>Thursdays</h2>
+        <p>
+          <a href="https://www.facebook.com/events/414825879794835/">
+            Open Mic of Horrors!
+            hosted by Laura Cooper
+            at Jonesy's Cafe
+            7PM EST - 10PM EST
+          </a>
+        </p>
+      </div>
+      <!-- <div class="events">
+        <h1>Events</h1>
+        <div style="height:20px;"></div>
+        <p>
+          Upcoming live events...
+        </p>
+      </div> -->
+      <div class="contact">
+        <h1>Contact</h1>
+        <div style="height:20px;"></div>
+        <form name="contact" netlify>
+          <label>Name<br /><input type="text" name="name" /></label>
+          <div style="height:20px;"></div>
+          <label>Email<br /><input type="email" name="email" /></label>
+          <div style="height:20px;"></div>
+          <label>Message<br /><textarea name="message"></textarea></label>
+          <div style="height:20px;"></div>
+          <button type="submit">Send</button>
+        </form>
+        <div style="height:20px;"></div>
+      </div>
+    </main>
     <nav>
-      <h2>Connect with Glass Spouses</h2>
       <ul>
         <li>
-          <a target="_blank" href="https://www.youtube.com/channel/UCjFjyE4tWrdUrozXv5Jw5Tg">
+          <a target="_blank" href="https://geo.music.apple.com/us/artist/glass-spouses/1424470946?mt=1&app=music&ls=1">
             <img
-              src="link-logo-youtube.svg"
-              alt="YouTube"
+              src="link-logo-apple.svg"
+              alt="Apple Music"
               height="30"
             >
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://open.spotify.com/artist/56uC86XnwYTW7JFf6E18Qd">
+          <a target="_blank" href="https://play.google.com/store/music/artist/Glass_Spouses?id=Aksrym3tcw2bqnrw5hiqsfjmxpa&hl=en">
             <img
-              src="link-logo-spotify.png"
-              alt="Spotify"
-              height="50"
-            >
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://store.cdbaby.com/artist/GlassSpouses">
-            <img 
-              src="link-logo-cdbaby.svg"
-              alt="CD Baby"
-              height="50"
+              src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
+              alt="Get it on Google Play"
+              height="60"
             >
           </a>
         </li>
@@ -629,122 +383,28 @@
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://geo.music.apple.com/us/artist/glass-spouses/1424470946?mt=1&app=music&ls=1" style="display:inline-block;overflow:hidden;background:url(https://tools.applemusic.com/en-us/lockup.svg?kind=artist&bubble=apple_music&style=standard-white) no-repeat;width:140px;height:30px;"></a>
-        </li>
-        <li>
-          <a target="_blank" href="https://play.google.com/store/music/artist/Glass_Spouses?id=Aksrym3tcw2bqnrw5hiqsfjmxpa&hl=en">
-            <img 
-              src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png"
-              alt="Get it on Google Play" 
-              height="60"
-            >
-          </a>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <a target="_blank" href="https://www.iheart.com/artist/glass-spouses-32441564/">
+          <a target="_blank" href="https://open.spotify.com/artist/56uC86XnwYTW7JFf6E18Qd">
             <img
-              src="link-logo-iheartradio.jpg"
-              alt="iHeartRadio"
-              height="60"
+              src="link-logo-spotify.png"
+              alt="Spotify"
+              height="50"
             >
           </a>
         </li>
         <li>
-          <a target="_blank" href="https://us.napster.com/artist/glass-spouses">
+          <a target="_blank" href="https://www.youtube.com/channel/UCjFjyE4tWrdUrozXv5Jw5Tg">
             <img
-              src="link-logo-napster.png"
-              alt="Napster"
-              height="40"
+              src="link-logo-youtube.svg"
+              alt="YouTube"
+              height="30"
             >
           </a>
         </li>
       </ul>
     </nav>
-    <main class="desktop">
-        <h1>Watch</h1>
-        <a target="_blank" href="https://www.youtube.com/channel/UCjFjyE4tWrdUrozXv5Jw5Tg">
-          <img
-            src="header-logo-youtube.svg"
-            alt="YouTube"
-            height="30"
-          >
-        </a>
-        <br>
-        <div>
-          <script src="https://apis.google.com/js/platform.js"></script>
-          <div class="g-ytsubscribe" data-channelid="UCjFjyE4tWrdUrozXv5Jw5Tg" data-layout="default" data-count="hidden"></div>
-        </div>
-        <br>
-        <iframe 
-          src="https://www.youtube.com/embed/videoseries?list=PL_EpEfhIoYie3BJrH8lkWjOj7o8NI2q3c"
-          width="660"
-          height="371"
-          frameborder="0"
-          allowtransparency="true"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-        <br><br>
-        <h1>Listen</h1>
-        <a target="_blank" href="https://open.spotify.com/artist/56uC86XnwYTW7JFf6E18Qd">
-          <img
-            src="header-logo-spotify.png"
-            alt="Spotify"
-            height="50"
-          >
-        </a>
-        <br>
-        <iframe
-          src="https://open.spotify.com/follow/1/?uri=spotify:artist:56uC86XnwYTW7JFf6E18Qd&size=basic&theme=dark&show-count=0"
-          width="92"
-          height="26"
-          scrolling="no"
-          frameborder="0"
-          allowtransparency="true"
-        ></iframe>
-        <br>
-        <iframe
-          src="https://open.spotify.com/embed/artist/56uC86XnwYTW7JFf6E18Qd"
-          width="660"
-          height="280"
-          frameborder="0"
-          allowtransparency="true"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-        <br><br>
-        <a target="_blank" href="https://store.cdbaby.com/artist/GlassSpouses">
-          <img 
-            src="header-logo-cdbaby.png"
-            alt="CD Baby"
-            height="50"
-          >
-        </a>
-        <br>
-        <iframe 
-          src="https://widget.cdbaby.com/a0f7a17b-e17e-47cc-b749-116e9fc7ec97/full/light/transparent"
-          width="660"
-          height="520"
-          frameborder="0"
-          allowtransparency="true"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </main>
-      <main class="mobile">
-        <h1>Listen</h1>
-        <iframe 
-          name="mini"
-          style="border:0px;width:100%;height:100px;"
-          src="https://widget.cdbaby.com/a0f7a17b-e17e-47cc-b749-116e9fc7ec97/mini/light/transparent"
-        ></iframe>
-      </main>
-      <footer>
-      <h1>Glass Spouses</h1>
+    <footer>
       <p>Thanks for listening!</p>
-      <div>&copy; 2019</div>
+      <div>&copy; 2021</div>
     </footer>
   </body>
 </html>
