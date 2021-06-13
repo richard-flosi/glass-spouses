@@ -84,6 +84,7 @@
         padding: 20px 0;
       }
       form {
+        box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -91,15 +92,18 @@
         width: 80%;
       }
       label {
+        box-sizing: border-box;
         width: 100%;
         font-size: 14px;
       }
       input {
+        box-sizing: border-box;
         width: 100%;
         padding: 10px;
         font-size: 14px;
       }
       textarea {
+        box-sizing: border-box;
         width: 100%;
         height: 20vh;
         padding: 10px;
@@ -174,15 +178,15 @@
         width: 100%;
         position: absolute;
       }
-      .responsive-square {
+      .responsive-spotify {
         width: 100%;
         box-sizing: border-box;
         overflow: hidden;
-        padding-bottom: 56.25%;
+        padding-bottom: 70vh;
         position: relative;
         height: 0;
       }
-      .responsive-square iframe {
+      .responsive-spotify iframe {
         left: 0;
         top: 0;
         height: 100%;
@@ -237,7 +241,7 @@
         <h1>Watch</h1>
         <div style="height:20px;"></div>
         <div class="responsive-video">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/YMkv0xqOaQg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL_EpEfhIoYie3BJrH8lkWjOj7o8NI2q3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div style="height:20px;"></div>
         <div>
@@ -245,10 +249,11 @@
           <div class="g-ytsubscribe" data-channelid="UCjFjyE4tWrdUrozXv5Jw5Tg" data-layout="default" data-count="hidden"></div>
         </div>
       </div>
+
       <div class="listen">
         <h1>Listen</h1>
         <div style="height:20px;"></div>
-        <div class="responsive-square">
+        <div class="responsive-spotify">
           <iframe
             src="https://open.spotify.com/embed/artist/56uC86XnwYTW7JFf6E18Qd"
             width="660"
@@ -271,7 +276,8 @@
           ></iframe>
         </div>
       </div>
-      <div class="open-mic">
+
+      <div class="open-mic" style="display:none;">
         <h1>Open Mic</h1>
         <div style="height:20px;"></div>
         <img src="open-mic-queen.jpg" alt="Open Mic Queen" />
@@ -298,7 +304,8 @@
         <img src="open-mic-richard.jpg" alt="Open Mic Richard" />
         <div style="height:20px;"></div>
       </div>
-      <div class="live">
+
+      <div class="live" style="display:none;">
         <h1>Live</h1>
         <p>
           Laura and Richard of Glass Spouses can frequently be found at some of their favorite open mics.

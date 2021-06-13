@@ -3,4 +3,4 @@ Glass Spouses
 
 ## Local Development
 
-`npx server public/`
+`npm start`

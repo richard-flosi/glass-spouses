@@ -1,0 +1,20 @@
+{
+  "name": "glass-spouses",
+  "version": "1.0.0",
+  "description": "Glass Spouses website glassspouses.com",
+  "scripts": {
+    "start": "netlify dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richard-flosi/glass-spouses.git"
+  },
+  "author": "Richard Flosi",
+  "bugs": {
+    "url": "https://github.com/richard-flosi/glass-spouses/issues"
+  },
+  "homepage": "https://github.com/richard-flosi/glass-spouses#readme",
+  "dependencies": {
+    "netlify-cli": "3.37.16"
+  }
+}
