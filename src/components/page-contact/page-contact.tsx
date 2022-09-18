@@ -4,26 +4,6 @@ import { Component, h } from "@stencil/core";
   tag: "page-contact",
 })
 export class PageContact {
-  async handleSubmit(event) {
-    event.stopPropagation();
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
-    const { name, email, message } = data;
-    /* @ts-ignore */
-    const body = new URLSearchParams({ name, email, message }).toString();
-    try {
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body,
-      });
-      console.log("response", response);
-    } catch (error) {
-      console.log("error", error);
-    }
-  }
-
   render() {
     return (
       <ion-content color="secondary">
