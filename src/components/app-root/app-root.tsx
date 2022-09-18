@@ -21,6 +21,7 @@ export class AppRoot {
           <ion-route url="/audio" component="page-audio" />
           <ion-route url="/video" component="page-video" />
           <ion-route url="/contact" component="page-contact" />
+          <ion-route url="/contact-success" component="page-contact-success" />
         </ion-router>
 
         <ion-nav id="ion-nav" />
