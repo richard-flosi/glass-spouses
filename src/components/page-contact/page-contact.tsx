@@ -28,7 +28,7 @@ export class PageContact {
 
           <ion-row class="ion-align-items-center ion-justify-content-center">
             <ion-col>
-              <form id="contact" name="contact" method="POST" data-netlify="true" class="ion-padding">
+              <form id="contact" name="contact" action="/contact-success" method="POST" data-netlify="true" class="ion-padding">
                 <ion-grid>
                   <ion-row class="ion-align-items-center ion-justify-content-center">
                     <ion-col>
