@@ -48,7 +48,11 @@ export class PageContact {
 
           <ion-row class="ion-align-items-center ion-justify-content-center">
             <ion-col>
+<<<<<<< Updated upstream
               <form id="contact" name="contact" method="POST" data-netlify="true" class="ion-padding" onSubmit={this.handleSubmit}>
+=======
+              <form id="contact" name="contact" action="/contact-success" method="POST" data-netlify="true" class="ion-padding">
+>>>>>>> Stashed changes
                 <ion-grid>
                   <ion-row class="ion-align-items-center ion-justify-content-center">
                     <ion-col>
