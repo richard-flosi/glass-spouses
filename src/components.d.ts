@@ -18,6 +18,8 @@ export namespace Components {
     }
     interface PageContact {
     }
+    interface PageContactSuccess {
+    }
     interface PageHome {
     }
     interface PageVideo {
@@ -60,6 +62,12 @@ declare global {
         prototype: HTMLPageContactElement;
         new (): HTMLPageContactElement;
     };
+    interface HTMLPageContactSuccessElement extends Components.PageContactSuccess, HTMLStencilElement {
+    }
+    var HTMLPageContactSuccessElement: {
+        prototype: HTMLPageContactSuccessElement;
+        new (): HTMLPageContactSuccessElement;
+    };
     interface HTMLPageHomeElement extends Components.PageHome, HTMLStencilElement {
     }
     var HTMLPageHomeElement: {
@@ -79,6 +87,7 @@ declare global {
         "organism-menu": HTMLOrganismMenuElement;
         "page-audio": HTMLPageAudioElement;
         "page-contact": HTMLPageContactElement;
+        "page-contact-success": HTMLPageContactSuccessElement;
         "page-home": HTMLPageHomeElement;
         "page-video": HTMLPageVideoElement;
     }
@@ -96,6 +105,8 @@ declare namespace LocalJSX {
     }
     interface PageContact {
     }
+    interface PageContactSuccess {
+    }
     interface PageHome {
     }
     interface PageVideo {
@@ -107,6 +118,7 @@ declare namespace LocalJSX {
         "organism-menu": OrganismMenu;
         "page-audio": PageAudio;
         "page-contact": PageContact;
+        "page-contact-success": PageContactSuccess;
         "page-home": PageHome;
         "page-video": PageVideo;
     }
@@ -121,6 +133,7 @@ declare module "@stencil/core" {
             "organism-menu": LocalJSX.OrganismMenu & JSXBase.HTMLAttributes<HTMLOrganismMenuElement>;
             "page-audio": LocalJSX.PageAudio & JSXBase.HTMLAttributes<HTMLPageAudioElement>;
             "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
+            "page-contact-success": LocalJSX.PageContactSuccess & JSXBase.HTMLAttributes<HTMLPageContactSuccessElement>;
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
             "page-video": LocalJSX.PageVideo & JSXBase.HTMLAttributes<HTMLPageVideoElement>;
         }
