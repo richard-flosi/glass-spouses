@@ -28,7 +28,11 @@ export class PageContact {
 
           <ion-row class="ion-align-items-center ion-justify-content-center">
             <ion-col>
-              <form name="contact" method="POST" data-netlify="true">
+              <ion-text>
+                <p>Email Glass Spouses at:</p>
+                <h1>glass.spouses@gmail.com</h1>
+              </ion-text>
+              {/* <form name="contact" method="POST" data-netlify="true">
                 <ion-grid class="ion-padding">
                   <ion-row class="ion-align-items-center ion-justify-content-center">
                     <ion-col>
@@ -58,7 +62,7 @@ export class PageContact {
                     </ion-col>
                   </ion-row>
                 </ion-grid>
-              </form>
+              </form> */}
             </ion-col>
           </ion-row>
         </ion-grid>
