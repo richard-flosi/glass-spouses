@@ -1,0 +1,16 @@
+[build]
+  command = "npm install && npm run build"
+  publish = "www"
+
+[dev]
+  framework = "#custom"
+  command = "stencil build --dev --watch --serve"
+  port = 8888
+  targetPort = 3333
+  publish = "www"
+  autoLaunch = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

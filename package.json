@@ -1,0 +1,26 @@
+{
+  "name": "glass-spouses",
+  "version": "1.0.0",
+  "description": "Glass Spouses website glassspouses.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richard-flosi/glass-spouses.git"
+  },
+  "author": "Richard Flosi",
+  "bugs": {
+    "url": "https://github.com/richard-flosi/glass-spouses/issues"
+  },
+  "homepage": "https://github.com/richard-flosi/glass-spouses#readme",
+  "scripts": {
+    "build": "stencil build",
+    "start": "netlify dev",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@ionic/core": "6.2.7",
+    "@stencil-community/router": "1.0.2",
+    "@stencil/core": "2.13.0",
+    "netlify-cli": "11.8.0",
+    "prettier": "2.7.1"
+  }
+}
