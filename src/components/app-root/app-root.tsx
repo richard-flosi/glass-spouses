@@ -18,6 +18,8 @@ export class AppRoot {
 
         <ion-router root="/" useHash={false} onIonRouteWillChange={dismissMenu}>
           <ion-route url="/" component="page-home" />
+          <ion-route url="/songs" component="page-songs" />
+          <ion-route url="/song/:id" component="page-song" />
           <ion-route url="/audio" component="page-audio" />
           <ion-route url="/video" component="page-video" />
           <ion-route url="/contact" component="page-contact" />

@@ -25,14 +25,37 @@ export class OrganismMenu {
         </ion-header>
         <ion-content color="primary">
           <ion-list color="primary" class="ion-no-padding">
-            <ion-item color="primary" href="/">Home</ion-item>
-            <ion-item color="primary" href="/video">Video</ion-item>
-            <ion-item color="primary" href="/audio">Audio</ion-item>
-            <ion-item color="primary" href="https://www.redbubble.com/people/richard-flosi/shop?artistUserName=richard-flosi&asc=u&collections=1595615&iaCode=all-departments&sortOrder=relevant" target="_blank">Merch</ion-item>
-            <ion-item color="primary" href="https://soundcloud.com/glass-spouses/tracks" target="_blank">SoundCloud</ion-item>
-            <ion-item color="primary" href="https://www.facebook.com/GlassSpouses" target="_blank">Facebook</ion-item>
-            <ion-item color="primary" href="https://twitter.com/glassspouses" target="_blank">Twitter</ion-item>
-            <ion-item color="primary" href="/contact">Contact</ion-item>
+            <ion-item color="primary" href="/">
+              Home
+            </ion-item>
+            <ion-item color="primary" href="/songs">
+              Songs
+            </ion-item>
+            <ion-item color="primary" href="/video">
+              Video
+            </ion-item>
+            <ion-item color="primary" href="/audio">
+              Audio
+            </ion-item>
+            <ion-item
+              color="primary"
+              href="https://www.redbubble.com/people/richard-flosi/shop?artistUserName=richard-flosi&asc=u&collections=1595615&iaCode=all-departments&sortOrder=relevant"
+              target="_blank"
+            >
+              Merch
+            </ion-item>
+            <ion-item color="primary" href="https://soundcloud.com/glass-spouses/tracks" target="_blank">
+              SoundCloud
+            </ion-item>
+            <ion-item color="primary" href="https://www.facebook.com/GlassSpouses" target="_blank">
+              Facebook
+            </ion-item>
+            <ion-item color="primary" href="https://twitter.com/glassspouses" target="_blank">
+              Twitter
+            </ion-item>
+            <ion-item color="primary" href="/contact">
+              Contact
+            </ion-item>
           </ion-list>
         </ion-content>
       </ion-menu>

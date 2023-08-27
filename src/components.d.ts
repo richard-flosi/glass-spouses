@@ -11,6 +11,7 @@ export namespace Components {
     interface OrganismFooter {
     }
     interface OrganismHeader {
+        "backHref": any;
     }
     interface OrganismMenu {
     }
@@ -19,6 +20,10 @@ export namespace Components {
     interface PageContact {
     }
     interface PageHome {
+    }
+    interface PageSong {
+    }
+    interface PageSongs {
     }
     interface PageVideo {
     }
@@ -66,6 +71,18 @@ declare global {
         prototype: HTMLPageHomeElement;
         new (): HTMLPageHomeElement;
     };
+    interface HTMLPageSongElement extends Components.PageSong, HTMLStencilElement {
+    }
+    var HTMLPageSongElement: {
+        prototype: HTMLPageSongElement;
+        new (): HTMLPageSongElement;
+    };
+    interface HTMLPageSongsElement extends Components.PageSongs, HTMLStencilElement {
+    }
+    var HTMLPageSongsElement: {
+        prototype: HTMLPageSongsElement;
+        new (): HTMLPageSongsElement;
+    };
     interface HTMLPageVideoElement extends Components.PageVideo, HTMLStencilElement {
     }
     var HTMLPageVideoElement: {
@@ -80,6 +97,8 @@ declare global {
         "page-audio": HTMLPageAudioElement;
         "page-contact": HTMLPageContactElement;
         "page-home": HTMLPageHomeElement;
+        "page-song": HTMLPageSongElement;
+        "page-songs": HTMLPageSongsElement;
         "page-video": HTMLPageVideoElement;
     }
 }
@@ -89,6 +108,7 @@ declare namespace LocalJSX {
     interface OrganismFooter {
     }
     interface OrganismHeader {
+        "backHref"?: any;
     }
     interface OrganismMenu {
     }
@@ -97,6 +117,10 @@ declare namespace LocalJSX {
     interface PageContact {
     }
     interface PageHome {
+    }
+    interface PageSong {
+    }
+    interface PageSongs {
     }
     interface PageVideo {
     }
@@ -108,6 +132,8 @@ declare namespace LocalJSX {
         "page-audio": PageAudio;
         "page-contact": PageContact;
         "page-home": PageHome;
+        "page-song": PageSong;
+        "page-songs": PageSongs;
         "page-video": PageVideo;
     }
 }
@@ -122,6 +148,8 @@ declare module "@stencil/core" {
             "page-audio": LocalJSX.PageAudio & JSXBase.HTMLAttributes<HTMLPageAudioElement>;
             "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
+            "page-song": LocalJSX.PageSong & JSXBase.HTMLAttributes<HTMLPageSongElement>;
+            "page-songs": LocalJSX.PageSongs & JSXBase.HTMLAttributes<HTMLPageSongsElement>;
             "page-video": LocalJSX.PageVideo & JSXBase.HTMLAttributes<HTMLPageVideoElement>;
         }
     }

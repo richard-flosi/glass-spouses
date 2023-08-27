@@ -1,6 +1,10 @@
 [build]
   command = "npm install && npm run build"
+  functions = "api/"
   publish = "www"
+
+[functions]
+  node_bundler = "esbuild"
 
 [dev]
   framework = "#custom"
@@ -9,6 +13,11 @@
   targetPort = 3333
   publish = "www"
   autoLaunch = true
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
 
 [[redirects]]
   from = "/*"

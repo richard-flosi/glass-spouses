@@ -1,5 +1,6 @@
 {
   "name": "glass-spouses",
+  "type": "module",
   "version": "1.0.0",
   "description": "Glass Spouses website glassspouses.com",
   "repository": {
@@ -22,5 +23,8 @@
     "@stencil/core": "2.13.0",
     "netlify-cli": "11.8.0",
     "prettier": "2.7.1"
+  },
+  "dependencies": {
+    "contentful": "10.5.0"
   }
 }
