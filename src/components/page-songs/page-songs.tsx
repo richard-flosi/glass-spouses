@@ -36,15 +36,19 @@ export class PageSongs {
 
           <ion-row class="ion-align-items-center ion-justify-content-center">
             <ion-col sizeXs="12" sizeLg="6">
-              <ion-list class="ion-no-padding">
-                {this.songs.items.map((song) => {
-                  return (
-                    <ion-item color="primary" lines="none" detail href={`/song/${song.sys.id}`}>
-                      {song.fields.name}
-                    </ion-item>
-                  );
-                })}
-              </ion-list>
+              <ion-card color="primary">
+                <ion-card-content>
+                  <ion-list class="ion-no-padding">
+                    {this.songs.items.map((song) => {
+                      return (
+                        <ion-item color="primary" lines="none" detail href={`/song/${song.fields.slug}`}>
+                          {song.fields.name}
+                        </ion-item>
+                      );
+                    })}
+                  </ion-list>
+                </ion-card-content>
+              </ion-card>
             </ion-col>
           </ion-row>
         </ion-grid>

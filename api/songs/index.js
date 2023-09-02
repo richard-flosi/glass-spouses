@@ -8,7 +8,7 @@ const contentful_client = contentful.createClient({
 });
 
 export async function handler() {
-  const songs = await contentful_client.getEntries({ content_type: "song" });
+  const songs = await contentful_client.getEntries({ content_type: "song", order: "fields.name" });
   return {
     statusCode: 200,
     body: JSON.stringify(songs),

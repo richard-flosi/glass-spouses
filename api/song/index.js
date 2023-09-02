@@ -8,10 +8,18 @@ const contentful_client = contentful.createClient({
 });
 
 export async function handler(request) {
-  const id = request.path.split("/").pop();
-  const song = await contentful_client.getEntry(id);
-  return {
-    statusCode: 200,
-    body: JSON.stringify(song),
-  };
+  const slug = request.path.split("/").pop();
+  try {
+    const songs = await contentful_client.getEntries({ "content_type": "song", "fields.slug": slug });
+    const song = songs.items[0];
+    return {
+      statusCode: 200,
+      body: JSON.stringify(song),
+    };
+  } catch {
+    return {
+      statusCode: 404,
+      body: JSON.stringify({ message: `${slug} not found` }),
+    };
+  }
 }
