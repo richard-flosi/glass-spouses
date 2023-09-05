@@ -25,14 +25,45 @@ export class PageSong {
     );
   }
 
-  renderAmazonMusic({ amazonMusicEmbedUrl }) {
+  renderAmazonMusic({ song, amazonMusicEmbedUrl }) {
     if (amazonMusicEmbedUrl) {
       return (
         <iframe
+          width="355px"
+          height="400px"
           src={amazonMusicEmbedUrl}
-          width="100%"
-          height="550px"
-          style={{ border: "none", borderRadius: "4px", boxShadow: "0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)" }}
+          title={`Amazon Music player: ${song} by Glass Spouses`}
+          style={{
+            display: "block",
+            margin: "auto",
+            border: "none",
+            borderRadius: "4px",
+            boxShadow: "0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)",
+          }}
+        ></iframe>
+      );
+    }
+    return null;
+  }
+
+  renderYouTubeUrl({ song, youTubeUrl }) {
+    if (youTubeUrl) {
+      return (
+        <iframe
+          width="355px"
+          height="200px"
+          src={youTubeUrl}
+          title={`YouTube video player: ${song} by Glass Spouses`}
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          style={{
+            display: "block",
+            margin: "auto",
+            border: "none",
+            borderRadius: "4px",
+            boxShadow: "0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)",
+          }}
         ></iframe>
       );
     }
@@ -81,6 +112,8 @@ export class PageSong {
     const song = this.song.fields.name;
     const art = this.song.fields?.art?.fields?.file?.url;
     const amazonMusicEmbedUrl = this.song.fields?.amazonMusicEmbedUrl;
+    const youTubeTopicUrl = this.song.fields?.youTubeTopicUrl;
+    const youTubeMusicVideoUrl = this.song.fields?.youTubeMusicVideoUrl;
     const lyrics = this.song.fields?.lyrics;
     const chords = this.song.fields?.chords;
     return (
@@ -88,13 +121,19 @@ export class PageSong {
         <organism-header backHref="/songs"></organism-header>
 
         <ion-grid fixed>
-          <ion-row class="ion-align-items-start ion-justify-content-center">
-            <ion-col sizeXs="12" sizeLg="3">
+          <ion-row class="ion-align-items-center ion-justify-content-center">
+            <ion-col sizeXs="12" sizeSm="6" sizeLg="3">
               {this.renderArt({ song, art })}
             </ion-col>
-            <ion-col sizeXs="12" sizeLg="9">
-              {this.renderAmazonMusic({ amazonMusicEmbedUrl })}
-            </ion-col>
+          </ion-row>
+          <ion-row class="ion-align-items-center ion-justify-content-center">
+            <ion-col size="auto">{this.renderYouTubeUrl({ song, youTubeUrl: youTubeMusicVideoUrl })}</ion-col>
+          </ion-row>
+          <ion-row class="ion-align-items-center ion-justify-content-center">
+            <ion-col size="auto">{this.renderYouTubeUrl({ song, youTubeUrl: youTubeTopicUrl })}</ion-col>
+          </ion-row>
+          <ion-row class="ion-align-items-center ion-justify-content-center">
+            <ion-col size="auto">{this.renderAmazonMusic({ song, amazonMusicEmbedUrl })}</ion-col>
           </ion-row>
           <ion-row class="ion-align-items-start ion-justify-content-center">
             <ion-col sizeXs="12" sizeLg="6">
