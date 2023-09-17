@@ -23,9 +23,9 @@ export class PageContact {
               <ion-text class="ion-text-center">
                 <p>Hi! We're glad you found us. Please stay connected. Thanks!</p>
                 <p>Email Glass Spouses at:</p>
-                <a href="mailto:glass.spouses@gmail.com">
+                <a href="mailto:contact@glassspouses.com">
                   <ion-text color="light" class="ion-text-center">
-                    <h1>glass.spouses@gmail.com</h1>
+                    <h1>contact@glassspouses.com</h1>
                   </ion-text>
                 </a>
               </ion-text>
@@ -37,5 +37,4 @@ export class PageContact {
       </ion-content>
     );
   }
-
 }

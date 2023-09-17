@@ -9,10 +9,10 @@ export class OrganismHeader {
   render() {
     return (
       <ion-header>
-        <ion-toolbar color="primary">
+        <ion-toolbar mode="ios" color="primary">
           {this.backHref && (
             <ion-buttons slot="start">
-              <ion-back-button defaultHref="/songs"></ion-back-button>
+              <ion-back-button mode="md" href={this.backHref} defaultHref="/"></ion-back-button>
             </ion-buttons>
           )}
           <ion-title>

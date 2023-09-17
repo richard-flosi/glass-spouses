@@ -25,46 +25,47 @@ export class PageSong {
     );
   }
 
-  renderAmazonMusic({ song, amazonMusicEmbedUrl }) {
-    if (amazonMusicEmbedUrl) {
-      return (
-        <iframe
-          width="355px"
-          height="400px"
-          src={amazonMusicEmbedUrl}
-          title={`Amazon Music player: ${song} by Glass Spouses`}
-          style={{
-            display: "block",
-            margin: "auto",
-            border: "none",
-            borderRadius: "4px",
-            boxShadow: "0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)",
-          }}
-        ></iframe>
-      );
-    }
-    return null;
-  }
-
   renderYouTubeUrl({ song, youTubeUrl }) {
     if (youTubeUrl) {
       return (
-        <iframe
-          width="355px"
-          height="200px"
-          src={youTubeUrl}
-          title={`YouTube video player: ${song} by Glass Spouses`}
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          style={{
-            display: "block",
-            margin: "auto",
-            border: "none",
-            borderRadius: "4px",
-            boxShadow: "0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)",
-          }}
-        ></iframe>
+        <Fragment>
+          <span class="ion-hide-lg-up">
+            <iframe
+              width="355px"
+              height="200px"
+              src={youTubeUrl}
+              title={`YouTube video player: ${song} by Glass Spouses`}
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              style={{
+                display: "block",
+                margin: "auto",
+                border: "none",
+                borderRadius: "4px",
+                boxShadow: "0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)",
+              }}
+            ></iframe>
+          </span>
+          <span class="ion-hide-lg-down">
+            <iframe
+              width="560px"
+              height="315px"
+              src={youTubeUrl}
+              title={`YouTube video player: ${song} by Glass Spouses`}
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              style={{
+                display: "block",
+                margin: "auto",
+                border: "none",
+                borderRadius: "4px",
+                boxShadow: "0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)",
+              }}
+            ></iframe>
+          </span>
+        </Fragment>
       );
     }
     return null;
@@ -111,7 +112,6 @@ export class PageSong {
   render() {
     const song = this.song.fields.name;
     const art = this.song.fields?.art?.fields?.file?.url;
-    const amazonMusicEmbedUrl = this.song.fields?.amazonMusicEmbedUrl;
     const youTubeTopicUrl = this.song.fields?.youTubeTopicUrl;
     const youTubeMusicVideoUrl = this.song.fields?.youTubeMusicVideoUrl;
     const lyrics = this.song.fields?.lyrics;
@@ -125,15 +125,9 @@ export class PageSong {
             <ion-col sizeXs="12" sizeSm="6" sizeLg="3">
               {this.renderArt({ song, art })}
             </ion-col>
-          </ion-row>
-          <ion-row class="ion-align-items-center ion-justify-content-center">
-            <ion-col size="auto">{this.renderYouTubeUrl({ song, youTubeUrl: youTubeMusicVideoUrl })}</ion-col>
-          </ion-row>
-          <ion-row class="ion-align-items-center ion-justify-content-center">
-            <ion-col size="auto">{this.renderYouTubeUrl({ song, youTubeUrl: youTubeTopicUrl })}</ion-col>
-          </ion-row>
-          <ion-row class="ion-align-items-center ion-justify-content-center">
-            <ion-col size="auto">{this.renderAmazonMusic({ song, amazonMusicEmbedUrl })}</ion-col>
+            <ion-col sizeXs="12" sizeLg="9">
+              {this.renderYouTubeUrl({ song, youTubeUrl: youTubeMusicVideoUrl || youTubeTopicUrl })}
+            </ion-col>
           </ion-row>
           <ion-row class="ion-align-items-start ion-justify-content-center">
             <ion-col sizeXs="12" sizeLg="6">

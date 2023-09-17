@@ -42,6 +42,9 @@ export class PageSongs {
                     {this.songs.items.map((song) => {
                       return (
                         <ion-item color="primary" lines="none" detail href={`/song/${song.fields.slug}`}>
+                          <ion-thumbnail slot="start">
+                            <img src={song.fields.art.fields.file.url} />
+                          </ion-thumbnail>
                           {song.fields.name}
                         </ion-item>
                       );

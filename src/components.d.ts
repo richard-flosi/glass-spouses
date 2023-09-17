@@ -8,14 +8,14 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppRoot {
     }
+    interface OrganismAlbumArt {
+    }
     interface OrganismFooter {
     }
     interface OrganismHeader {
         "backHref": any;
     }
     interface OrganismMenu {
-    }
-    interface PageAudio {
     }
     interface PageContact {
     }
@@ -35,6 +35,12 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLOrganismAlbumArtElement extends Components.OrganismAlbumArt, HTMLStencilElement {
+    }
+    var HTMLOrganismAlbumArtElement: {
+        prototype: HTMLOrganismAlbumArtElement;
+        new (): HTMLOrganismAlbumArtElement;
+    };
     interface HTMLOrganismFooterElement extends Components.OrganismFooter, HTMLStencilElement {
     }
     var HTMLOrganismFooterElement: {
@@ -52,12 +58,6 @@ declare global {
     var HTMLOrganismMenuElement: {
         prototype: HTMLOrganismMenuElement;
         new (): HTMLOrganismMenuElement;
-    };
-    interface HTMLPageAudioElement extends Components.PageAudio, HTMLStencilElement {
-    }
-    var HTMLPageAudioElement: {
-        prototype: HTMLPageAudioElement;
-        new (): HTMLPageAudioElement;
     };
     interface HTMLPageContactElement extends Components.PageContact, HTMLStencilElement {
     }
@@ -91,10 +91,10 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-root": HTMLAppRootElement;
+        "organism-album-art": HTMLOrganismAlbumArtElement;
         "organism-footer": HTMLOrganismFooterElement;
         "organism-header": HTMLOrganismHeaderElement;
         "organism-menu": HTMLOrganismMenuElement;
-        "page-audio": HTMLPageAudioElement;
         "page-contact": HTMLPageContactElement;
         "page-home": HTMLPageHomeElement;
         "page-song": HTMLPageSongElement;
@@ -105,14 +105,14 @@ declare global {
 declare namespace LocalJSX {
     interface AppRoot {
     }
+    interface OrganismAlbumArt {
+    }
     interface OrganismFooter {
     }
     interface OrganismHeader {
         "backHref"?: any;
     }
     interface OrganismMenu {
-    }
-    interface PageAudio {
     }
     interface PageContact {
     }
@@ -126,10 +126,10 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-root": AppRoot;
+        "organism-album-art": OrganismAlbumArt;
         "organism-footer": OrganismFooter;
         "organism-header": OrganismHeader;
         "organism-menu": OrganismMenu;
-        "page-audio": PageAudio;
         "page-contact": PageContact;
         "page-home": PageHome;
         "page-song": PageSong;
@@ -142,10 +142,10 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "organism-album-art": LocalJSX.OrganismAlbumArt & JSXBase.HTMLAttributes<HTMLOrganismAlbumArtElement>;
             "organism-footer": LocalJSX.OrganismFooter & JSXBase.HTMLAttributes<HTMLOrganismFooterElement>;
             "organism-header": LocalJSX.OrganismHeader & JSXBase.HTMLAttributes<HTMLOrganismHeaderElement>;
             "organism-menu": LocalJSX.OrganismMenu & JSXBase.HTMLAttributes<HTMLOrganismMenuElement>;
-            "page-audio": LocalJSX.PageAudio & JSXBase.HTMLAttributes<HTMLPageAudioElement>;
             "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
             "page-song": LocalJSX.PageSong & JSXBase.HTMLAttributes<HTMLPageSongElement>;

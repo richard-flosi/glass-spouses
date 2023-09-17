@@ -32,10 +32,7 @@ export class OrganismMenu {
               Songs
             </ion-item>
             <ion-item color="primary" href="/video">
-              Video
-            </ion-item>
-            <ion-item color="primary" href="/audio">
-              Audio
+              Music Videos
             </ion-item>
             <ion-item
               color="primary"
