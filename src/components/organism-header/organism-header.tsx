@@ -9,7 +9,7 @@ export class OrganismHeader {
   render() {
     return (
       <ion-header>
-        <ion-toolbar mode="ios" color="primary">
+        <ion-toolbar mode="ios" color="primary" style={{ opacity: "0.9" }}>
           {this.backHref && (
             <ion-buttons slot="start">
               <ion-back-button mode="md" href={this.backHref} defaultHref="/"></ion-back-button>

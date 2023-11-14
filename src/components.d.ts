@@ -17,6 +17,8 @@ export namespace Components {
     }
     interface OrganismMenu {
     }
+    interface OrganismVideoBackground {
+    }
     interface PageContact {
     }
     interface PageHome {
@@ -59,6 +61,12 @@ declare global {
         prototype: HTMLOrganismMenuElement;
         new (): HTMLOrganismMenuElement;
     };
+    interface HTMLOrganismVideoBackgroundElement extends Components.OrganismVideoBackground, HTMLStencilElement {
+    }
+    var HTMLOrganismVideoBackgroundElement: {
+        prototype: HTMLOrganismVideoBackgroundElement;
+        new (): HTMLOrganismVideoBackgroundElement;
+    };
     interface HTMLPageContactElement extends Components.PageContact, HTMLStencilElement {
     }
     var HTMLPageContactElement: {
@@ -95,6 +103,7 @@ declare global {
         "organism-footer": HTMLOrganismFooterElement;
         "organism-header": HTMLOrganismHeaderElement;
         "organism-menu": HTMLOrganismMenuElement;
+        "organism-video-background": HTMLOrganismVideoBackgroundElement;
         "page-contact": HTMLPageContactElement;
         "page-home": HTMLPageHomeElement;
         "page-song": HTMLPageSongElement;
@@ -114,6 +123,8 @@ declare namespace LocalJSX {
     }
     interface OrganismMenu {
     }
+    interface OrganismVideoBackground {
+    }
     interface PageContact {
     }
     interface PageHome {
@@ -130,6 +141,7 @@ declare namespace LocalJSX {
         "organism-footer": OrganismFooter;
         "organism-header": OrganismHeader;
         "organism-menu": OrganismMenu;
+        "organism-video-background": OrganismVideoBackground;
         "page-contact": PageContact;
         "page-home": PageHome;
         "page-song": PageSong;
@@ -146,6 +158,7 @@ declare module "@stencil/core" {
             "organism-footer": LocalJSX.OrganismFooter & JSXBase.HTMLAttributes<HTMLOrganismFooterElement>;
             "organism-header": LocalJSX.OrganismHeader & JSXBase.HTMLAttributes<HTMLOrganismHeaderElement>;
             "organism-menu": LocalJSX.OrganismMenu & JSXBase.HTMLAttributes<HTMLOrganismMenuElement>;
+            "organism-video-background": LocalJSX.OrganismVideoBackground & JSXBase.HTMLAttributes<HTMLOrganismVideoBackgroundElement>;
             "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
             "page-song": LocalJSX.PageSong & JSXBase.HTMLAttributes<HTMLPageSongElement>;

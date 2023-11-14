@@ -4,7 +4,6 @@ import { Component, h } from "@stencil/core";
   tag: "page-video",
 })
 export class PageVideo {
-
   render() {
     return (
       <ion-content color="secondary">
@@ -29,7 +28,42 @@ export class PageVideo {
 
           <ion-row class="ion-align-items-center ion-justify-content-center">
             <ion-col size="auto">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL_EpEfhIoYie3BJrH8lkWjOj7o8NI2q3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
+              <span class="ion-hide-lg-up">
+                <iframe
+                  width="355px"
+                  height="200px"
+                  src="https://www.youtube.com/embed/videoseries?list=PL_EpEfhIoYie3BJrH8lkWjOj7o8NI2q3c"
+                  title="YouTube video player: Music Videos by Glass Spouses"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{
+                    display: "block",
+                    margin: "auto",
+                    border: "none",
+                    borderRadius: "4px",
+                    boxShadow: "0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)",
+                  }}
+                ></iframe>
+              </span>
+              <span class="ion-hide-lg-down">
+                <iframe
+                  width="560px"
+                  height="315px"
+                  src="https://www.youtube.com/embed/videoseries?list=PL_EpEfhIoYie3BJrH8lkWjOj7o8NI2q3c"
+                  title="YouTube video player: Music Videos by Glass Spouses"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  style={{
+                    display: "block",
+                    margin: "auto",
+                    border: "none",
+                    borderRadius: "4px",
+                    boxShadow: "0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12)",
+                  }}
+                ></iframe>
+              </span>
             </ion-col>
           </ion-row>
 
@@ -45,5 +79,4 @@ export class PageVideo {
       </ion-content>
     );
   }
-
 }
