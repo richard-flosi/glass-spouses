@@ -4,6 +4,15 @@ import { Component, h } from "@stencil/core";
   tag: "organism-footer",
 })
 export class OrganismFooter {
+  async onShare() {
+    if (navigator.share) {
+      await navigator.share({
+        title: document.title,
+        url: window.location.href,
+      });
+    }
+  }
+
   render() {
     return (
       <ion-grid fixed class="ion-padding">
@@ -27,6 +36,14 @@ export class OrganismFooter {
             <a target="_blank" href="https://music.youtube.com/channel/UCfXETswfimTSOnwlaLu_EAA">
               <img src="/assets/link-logo-youtube.svg" alt="YouTube" height="30" />
             </a>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class={`ion-align-items-center ion-justify-content-center ${!navigator.share && "ion-hide"}`}>
+          <ion-col size="auto">
+            <ion-button fill="outline" color="light" size="large" onclick={this.onShare}>
+              Share this page <ion-icon slot="end" icon="share"></ion-icon>
+            </ion-button>
           </ion-col>
         </ion-row>
 

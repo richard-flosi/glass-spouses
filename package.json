@@ -15,6 +15,7 @@
   "scripts": {
     "build": "stencil build",
     "start": "netlify dev",
+    "start:live": "netlify dev --live",
     "generate": "stencil generate"
   },
   "devDependencies": {

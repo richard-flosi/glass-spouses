@@ -1,5 +1,41 @@
 import { Component, State, Fragment, h } from "@stencil/core";
 
+function head({ title, description, keywords, image, url, player }) {
+  document.title = title;
+  document.querySelector("link[rel='apple-touch-icon']").setAttribute("href", image);
+
+  // meta tags
+  updateMeta({ name: "description", content: description });
+  updateMeta({ name: "keywords", content: keywords });
+
+  // open graph
+  updateMeta({ property: "og:title", content: title });
+  updateMeta({ property: "og:description", content: description });
+  updateMeta({ property: "og:url", content: url });
+  updateMeta({ property: "og:image", content: image });
+
+  // twitter
+  updateMeta({ property: "twitter:title", content: title });
+  updateMeta({ property: "twitter:description", content: description });
+  updateMeta({ property: "twitter:image", content: image });
+  updateMeta({ property: "twitter:image:alt", content: title });
+  updateMeta({ property: "twitter:player", content: player });
+
+  function updateMeta({ name = null, property = null, content = null }) {
+    if (!name && !property) {
+      throw new Error(`updateMeta: Expected name or property, but got: name: ${name}, property: ${property}`);
+    }
+
+    let metaQuerySelector = "";
+    if (name) {
+      metaQuerySelector = `meta[name="${name}"]`;
+    } else if (property) {
+      metaQuerySelector = `meta[property="${property}"]`;
+    }
+    document.querySelector(metaQuerySelector).setAttribute("content", content);
+  }
+}
+
 @Component({
   tag: "page-song",
 })
@@ -116,6 +152,18 @@ export class PageSong {
     const youTubeMusicVideoUrl = this.song.fields?.youTubeMusicVideoUrl;
     const lyrics = this.song.fields?.lyrics;
     const chords = this.song.fields?.chords;
+
+    head({
+      title: `${song} by Glass Spouses`,
+      description: `Listen to ${song} by Glass Spouses.`,
+      keywords: [
+        "girl in the vampire theatre, glass spouses, anne rice, vampires, novels, literary nerd, dark wave, dance music, fun, female vocals, laura cooper, richard flosi, open mic nights",
+      ].join(", "),
+      url: window.location.href,
+      image: art,
+      player: youTubeMusicVideoUrl || youTubeTopicUrl,
+    });
+
     return (
       <ion-content color="secondary">
         <organism-header backHref="/songs"></organism-header>
